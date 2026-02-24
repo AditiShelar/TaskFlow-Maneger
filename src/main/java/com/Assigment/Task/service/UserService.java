@@ -36,6 +36,15 @@ public class UserService {
         return userRepository.findByUserName(userName);
     }
 
+    public User findById(ObjectId id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+    }
+
+    public User save(User user) {
+        return userRepository.save(user);
+    }
+
 //    public void saveEntry(User user) {
 //    }
 }

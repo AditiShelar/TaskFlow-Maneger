@@ -1,0 +1,8 @@
+{
+  "name": "task-manager-frontend",
+  "version": "1.0.0",
+  "description": "Task Manager Frontend",
+  "scripts": {
+    "dev": "npx -y http-server . -p 3000 -c-1 --cors"
+  }
+}
