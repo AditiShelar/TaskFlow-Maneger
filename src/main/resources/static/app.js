@@ -104,7 +104,11 @@ authForm.addEventListener('submit', async (e) => {
   try {
     if (authMode === 'register') {
       await registerUser(userName, password);
-      toast('Account created! Signing you in…', 'success');
+      toast('Account created! Please sign in.', 'success');
+      switchAuthTab('login');
+      authPassword.value = '';
+      authSubmitBtn.classList.remove('loading');
+      return;
     }
     // Login flow — call the backend login endpoint
     const loginRes = await fetch(`${API}/User/login`, {
